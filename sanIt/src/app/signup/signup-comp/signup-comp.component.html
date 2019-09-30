@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 signupdiv">
+                <form [formGroup]="signupForm" (ngSubmit)="submit()">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" formControlName="email" class="form-control" [ngClass]="{'is-invalid': f.email.touched && f.email.errors}">
+                            <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback" class="alert alert-danger">
+                                <div *ngIf="f.email.errors.required">Email is Required</div>
+                                <div *ngIf="f.email.errors.email">Email is Wrong</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" formControlName="password" class="form-control"  [ngClass]="{ 'is-invalid': f.password.touched && f.password.errors }">
+                                <div *ngIf="f.password.touched && f.password.errors" class="invalid-feedback" class="alert alert-danger">
+                                        <div *ngIf="f.password.errors.required && f.password.touched">Password is Required</div>
+                                        <div *ngIf="f.password.errors.minlength && f.password.touched">Password must be at least 4 characters</div>
+                                    </div>
+                        </div>
+                        <div class="form-group">
+                                <label for="cnfPassword">Confirm Password:</label>
+                                <input type="password" formControlName="cnfPassword" class="form-control"  [ngClass]="{ 'is-invalid': f.cnfPassword.touched && f.cnfPassword.errors }">
+                                <div *ngIf="f.cnfPassword.errors && f.cnfPassword.touched " class="invalid-feedback" class="alert alert-danger">
+                                        <div *ngIf="f.cnfPassword.errors.required && f.cnfPassword.touched">Confirm Password is required</div>
+                                        <div *ngIf="f.cnfPassword.errors.mustMatch && f.cnfPassword.touched" >Passwords must match</div>
+                                        <div *ngIf="f.cnfPassword.errors.minlength && f.cnfPassword.touched">Password must be at least 4 characters</div>
+                                    </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Signup</button>
+                    </form>
+        </div>
+        <div class="col-md-4"></div>
+
+           
+    </div>
+   
+  
+
+</div>
+<div *ngIf="apiError">
+    {{apiError}}
+</div>
+<div *ngIf="apiResult">
+       {{apiResult['email']}}
+</div>

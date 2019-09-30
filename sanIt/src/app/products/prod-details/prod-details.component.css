@@ -1,0 +1,25 @@
+.card-img-top {
+    width: 250px;
+    height: 250px;
+    border: 1px solid green;
+    display: block;
+
+    
+}
+.card-body {
+    background-color: blue;
+    color: aliceblue;
+    font-size: 20px;
+    font-family: sans-serif ;
+    border-radius: 10%;
+    text-align: center;
+    margin-top: 100px;
+}
+.prodbody {
+    width: 300px;
+    height: 500px;
+    border: 2px solid goldenrod;
+}
+a.placeorder{
+    margin-left: 5px;
+}

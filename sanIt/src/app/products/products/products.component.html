@@ -1,0 +1,24 @@
+<div *ngIf="products; else elseBlock">
+  <section class="products-feature">
+    <div class="container-fluid">
+        <div class="row">
+                <div class="card col-md-4" style="width: 18rem;" *ngFor="let prod of products">
+                        <img src="http://localhost:3000/static/images/uploads/{{prod.productImage.name}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{prod.title}}</h5>
+                          <p class="card-text">{{prod.description}}</p>
+                          <p class="card-text">{{prod.price}}</p>
+                          <a class="btn btn-primary" [routerLink]="['/productsdetail']" [queryParams]="{id: prod._id}" >Details</a>        
+                          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                      </div>
+                      <div class="col-md-1"></div>
+        </div>                  
+    </div>
+        
+</section>
+</div>
+<ng-template #elseBlock>
+  <h1 style="text-align: center">Empty Products</h1>
+</ng-template>
+

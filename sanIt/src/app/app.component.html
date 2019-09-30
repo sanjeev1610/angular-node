@@ -1,0 +1,13 @@
+<div class="container ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/products" routerLinkActive="active">Navbar</a>
+<app-navbar [cc]="ccount"></app-navbar>
+<app-index></app-index>
+
+<ul>
+  <li *ngFor="let local of localCount | async">
+    {{ local.count }}
+  </li>
+</ul>
+
+localcount:: {{localCount.count}}

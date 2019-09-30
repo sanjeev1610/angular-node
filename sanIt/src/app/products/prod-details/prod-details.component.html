@@ -1,0 +1,23 @@
+<p>prod-details works!</p>
+{{productId}}
+
+{{productDetail | json}}
+
+<div class="container-fluid">
+    <div class="row">
+            <div class="card col-md-4 prodbody" >
+                    <img src="{{productDetail['url']}}" class="card-img-top" alt="...">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="card-body col-md-4">
+                <h5 class="card-title">Product Name:: {{productDetail.title}}</h5>
+                <p class="card-text">Product Description:: {{productDetail.description}}</p>
+                <p class="card-text">Product Price:: {{productDetail.price}}</p>
+                <a class="btn btn-danger addtocart" (click)="addToCart()">Add To Cart</a>
+                <a class="btn btn-success placeorder">Place Order</a>
+
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            <div class="col-md-1"></div>
+    </div>                  
+</div>

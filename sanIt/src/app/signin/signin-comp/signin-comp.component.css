@@ -1,0 +1,9 @@
+.signupdiv{
+    display: inline;
+}
+div.container{
+    background-color: aqua;
+    margin-top: 75px;
+    display: block;
+    padding-block: 25px;
+}

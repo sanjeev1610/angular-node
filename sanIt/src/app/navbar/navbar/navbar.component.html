@@ -1,0 +1,19 @@
+   <div>
+   <nav>
+   <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <!-- <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a> -->
+        </li>
+      </ul>
+      <ul class="navbar-nav " style="float: right">
+          <li class="nav-item">
+            <mat-icon matBadge={{cc}} matBadgeColor="warn">shopping_basket</mat-icon>
+            <a *ngIf = "isLogin()" class="nav-link si" routerLink="/user/dashboard" routerLinkActive="active">Dashboard</a>
+            <a *ngIf = "isLogin()" class="nav-link si" routerLink="/edit-prod" routerLinkActive="active">Add Products</a>
+            <a *ngIf= "!isLogin()" class="nav-link si" routerLink="/signup" routerLinkActive="active">Signup</a>
+            <a *ngIf= "!isLogin()" class="nav-link si" routerLink="/signin" routerLinkActive="active">Singin</a>
+            <button *ngIf= "isLogin()" class="nav-link si btn btn-light" (click)="logout()">Signout</button>
+          </li>
+        </ul>
+    </nav>
+  </div>
